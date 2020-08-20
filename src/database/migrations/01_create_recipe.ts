@@ -4,7 +4,8 @@ export async function up(knex: Knex) {
     return knex.schema.createTable('recipes', table => {
         table.increments('id').primary()
         table.string('type').notNullable()
-        table.string('recipe')
+        table.string('recipe').notNullable()
+        table.integer('likes').notNullable()
 
         table
         .integer('user_id')
